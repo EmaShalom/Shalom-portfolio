@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <h2 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-9">
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-9">
             {t.hero.line1}<br />
             {t.hero.line2}<br />
             {t.hero.line3}
@@ -47,7 +47,7 @@ const Hero = () => {
 
         {/* Right - hero image */}
         <div className="flex-1 flex justify-center lg:justify-end">
-          <figure className="w-92 lg:w-116 rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-sky-700 to-sky-400">
+          <figure className="w-full max-w-xs sm:max-w-sm lg:w-116 rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-sky-700 to-sky-400">
             <img src={heroImg} alt="Shalom Emmanuel" className="w-full h-auto object-cover" />
           </figure>
         </div>

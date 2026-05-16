@@ -21,9 +21,7 @@ const translations = {
     },
     hero: {
       badge: 'Available for work',
-      line1: 'Building Scalable',
-      line2: 'Modern Websites',
-      line3: 'for the Future',
+      line1: 'Building Scalable modern Websites for the Future',
       downloadCv: 'Download CV',
       scrollDown: 'Scroll down',
     },
