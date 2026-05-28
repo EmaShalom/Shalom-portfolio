@@ -1,8 +1,14 @@
 import heroImg from '../assets/hero.png';
 import { useLanguage } from '../context/LanguageContext';
 
+const CV = {
+  en: { href: '/CV%20-%20ENG.pdf', filename: 'CV - ENG.pdf' },
+  fr: { href: '/CV%20-%20FR.pdf',  filename: 'CV - FR.pdf'  },
+};
+
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const cv = CV[lang] ?? CV.en;
 
   return (
     <section id="home" className="pt-28 lg:pt-36 pb-16 lg:pb-24">
@@ -28,12 +34,18 @@ const Hero = () => {
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-3">
             <a
-              href="/cv.pdf"
-              download
-              className="inline-flex items-center gap-2 bg-sky-400 hover:bg-sky-300 text-zinc-900 font-semibold px-6 py-3 rounded-xl transition-colors"
+              href={cv.href}
+              download={cv.filename}
+              className="inline-flex items-center gap-2 bg-sky-400 hover:bg-sky-300 active:scale-95 text-zinc-900 font-semibold px-6 py-3 rounded-xl transition-all duration-200 group"
+              aria-label={`${t.hero.downloadCv} (PDF)`}
             >
               {t.hero.downloadCv}
-              <span className="material-symbols-rounded text-lg">download</span>
+              <span
+                className="material-symbols-rounded text-lg transition-transform duration-200 group-hover:translate-y-0.5"
+                aria-hidden="true"
+              >
+                download
+              </span>
             </a>
             <a
               href="#about"
